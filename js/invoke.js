@@ -114,48 +114,28 @@ var queue;
 
 var combos = [
 	{
-	"name": "combo1",
+	"name": "",
     "sequence": "asdfa",
 	"image": 'url("http://i.imgur.com/JTlUPwY.png")',
 	},
 	{
-	"name": "combo2",
+	"name": "",
     "sequence": "fdsaa",
 	"image": 'url("http://i.imgur.com/oQS5lTU.png")',
 	},
 	{
-	"name": "combo3",
+	"name": "",
     "sequence": "dassa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
-	"name": "combo4",
+	"name": "",
     "sequence": "safda",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
-	"name": "combo5",
+	"name": "",
     "sequence": "fasff",
-	"image": 'url("http://i.imgur.com/e2L27wh.png")',
-	},
-	{
-	"name": "combo6",
-    "sequence": "dsaas",
-	"image": 'url("http://i.imgur.com/e2L27wh.png")',
-	},
-	{
-	"name": "combo7",
-    "sequence": "fsafa",
-	"image": 'url("http://i.imgur.com/e2L27wh.png")',
-	},
-	{
-	"name": "combo8",
-    "sequence": "fdasa",
-	"image": 'url("http://i.imgur.com/e2L27wh.png")',
-	},
-	{
-	"name": "combo9",
-    "sequence": "ddsaa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 ];
