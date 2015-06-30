@@ -21,6 +21,7 @@ function submitForm() {
     $('#btnSubmit').css('display', 'none');
     $('#bioForm').css('display', 'none');
     $('#btnpractice').css('display', 'block');
+	$("#status").css('display', 'block');
 }
 
 function practice() {
