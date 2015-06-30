@@ -21,10 +21,10 @@ function submitForm() {
     $('#btnSubmit').css('display', 'none');
     $('#bioForm').css('display', 'none');
     $('#btnpractice').css('display', 'block');
-	$("#status").css('display', 'block');
 }
 
 function practice() {
+    $("#status").css('display', 'block');
     var combosToDo = ['3', '4', '2', '1'];
     $('#btnpractice').css('display', 'none');
     initialize('practice', combosToDo);
