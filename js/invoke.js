@@ -21,6 +21,7 @@ function submitForm() {
     $('#btnSubmit').css('display', 'none');
     $('#bioForm').css('display', 'none');
     $('#btnpractice').css('display', 'block');
+	$("#status").css('display', 'block');
 }
 
 function practice() {
@@ -67,8 +68,8 @@ function updateCircles() {
     })
 }
 
-var queueIds = ['circleOne', 'circleTwo', 'circleThree', 'circleFour', 'circleFive', 'circleSix'];
-var queueKeys = ['a', 's', 'd', 'f', 'e', 'g'];
+var queueIds = ['circleOne', 'circleTwo', 'circleThree', 'circleFour', 'circleFive'];
+var queueKeys = ['a', 's', 'd', 'f', 'e'];
 
 function initialize(mode, combosToDo) {
     //queue = _.map(queueKeys, function(key) {return new Circle('#FFFFFF', '')});
@@ -114,47 +115,47 @@ var queue;
 var combos = [
 	{
 	"name": "combo1",
-    "sequence": "asdfaa",
+    "sequence": "asdfa",
 	"image": 'url("http://i.imgur.com/JTlUPwY.png")',
 	},
 	{
 	"name": "combo2",
-    "sequence": "fdsada",
+    "sequence": "fdsaa",
 	"image": 'url("http://i.imgur.com/oQS5lTU.png")',
 	},
 	{
 	"name": "combo3",
-    "sequence": "dasfsa",
+    "sequence": "dasfa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo4",
-    "sequence": "sasfda",
+    "sequence": "sasda",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo5",
-    "sequence": "fasdff",
+    "sequence": "fsdff",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo6",
-    "sequence": "dsafas",
+    "sequence": "dsafs",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo7",
-    "sequence": "fsdafa",
+    "sequence": "fsdfa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo8",
-    "sequence": "fdasfa",
+    "sequence": "fdafa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo9",
-    "sequence": "ddsaaa",
+    "sequence": "ddsaa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 ];
@@ -169,8 +170,9 @@ function addToResponseData(timestamp, state, data) {
     responseData[timestamp] = {
         'state': state,
         'data': data,
-    }
+    } 
 }
+
 
 // Number of presses
 var presses = 0;
