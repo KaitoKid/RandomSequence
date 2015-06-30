@@ -1,0 +1,93 @@
+body
+{
+    font:12px/17px 'Trebuchet MS', Arial, Helvetica, sans-serif;    
+    color:#6d6e65;
+}
+
+.threecol-mask {
+    position:relative;	
+    clear:both;
+    float:left;
+    margin-top: 20px;
+    width:100%;			
+    min-width:950px;
+    overflow:hidden;	
+}
+
+.threecol-midmask, .threecol-leftmask {
+    float:left;
+    width:100%;			
+    position:relative;
+}
+
+.threecol-mid, .threecol-left, .threecol-right {
+    float:left;
+    position:relative;
+    padding:0 0 1em 0;	
+    overflow:hidden;	                   
+}
+
+.threecol-midmask {
+    right:25%;			
+}
+
+.threecol-leftmask {
+    right:50%;
+}
+
+.threecol-mid {
+    width:47%;
+    left:93%;
+    background: #FFFFFF;
+}
+.threecol-left {
+    width:13%;
+    left:32%;
+    background-color: #FFFFFF;
+}
+
+.threecol-right {
+    width:34%;			
+    left:82%;			
+    background-color: #FFFFFF;
+}
+
+.circle {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    background-image: #FFFFFF;
+	background-size: 100% 100%;
+    color: #FFFFFF;
+}
+
+.circle-text {
+    color: #FFFFFF;
+    float: left;
+    line-height: 1;
+    margin-top: -0.5em;
+    padding-top: 50%;
+    text-align: center;
+    width: 100%;
+}
+
+.square{
+    margin-left: auto;
+    margin-right: auto;
+    width: 96px;
+    height: 96px;
+    border: 1px solid #000000;
+    background-image: #FFFFFF;
+	background-size: 100% 100%;
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d2/Solid_white.png");
+}
+#status{
+	color: #FF0000;
+}
+
+#nextCombo{
+	color: #660033;
+}
