@@ -21,7 +21,9 @@ function submitForm() {
     var gender = $('#gender').val();
     var rank = $('#mmr').val();
     var exp = $('#exp').val();
+    var game = $('#moba').val();
     var data = {
+        'game': game,
         'email': email,
         'age': age,
         'gender': gender,
