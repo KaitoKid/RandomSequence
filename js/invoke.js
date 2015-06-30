@@ -3,6 +3,18 @@ var sections = [practice, baseline, training, posttest, downloadJson];
 var taskNum = 0;
 var bio;
 
+function submitMobaForm() {
+    $('#btnSubmitMoba').css('display', 'none')
+    $('#btnSubmit').css('display', 'block')
+    $('#bioForm').css('display', 'block')
+    $('#mobaForm').css('display', 'none')
+    if ($('#moba').val() == 'League') {
+        $('#mmrDesc').text('League MMR (use op.gg to estimate):')
+    } else {
+        $('#mmrDesc').text('Dota 2 MMR (exact value from profile):')
+    }
+}
+
 function submitForm() {
     var email = $('#email').val();
     var age = $('#age').val();

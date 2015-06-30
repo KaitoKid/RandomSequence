@@ -41,7 +41,16 @@
 						<h2 id = "status" style="display:none"> Status: Incorrect </h2>
 					</div>
                     <div style="margin-left:auto; margin-right:auto; text-align:center; width:400px; ">                        
-                            <form id='bioForm' action="/INSERT_WHERE_ITS_SENT" method="post">
+                            <form id='mobaForm'>
+                                <div>
+                                    <label>Do you primarly play League or Dota2?:</label>
+                                    <select id="moba">
+                                        <option value="League">League of Legends</option>
+                                        <option value="Dota2">Dota 2</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <form id='bioForm' style="display:none">
                                 <div>
                                     <label>Email:</label>
                                     <input type="text" id="email"/>
@@ -58,16 +67,13 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label>Current Solo MMR:</label>
-                                    <input type="text" id="mmr"/>
-                                </div>
-                                <div>
-                                    <label>Hours a week of MOBA (single number estimate):</label>
+                                    <label id='mmrDesc'>Current Solo MMR:</label>
                                     <input type="text" id="mmr"/>
                                 </div>
                             
                             </form>
-                        <button id="btnSubmit" onclick="submitForm();">Submit</button>
+                        <button id="btnSubmitMoba" onclick="submitMobaForm();">Submit</button>
+                        <button id="btnSubmit" onclick="submitForm();" style="display:none">Submit</button>
                         <button id="btnpractice" onclick="practice();" style="display:none">Practice</button>
                         <button id="btnbaseline" onclick="baseline();" style="display:none">Baseline</button>                        
                         <button id="btntraining" onclick="training();" style="display:none">Training</button>                 
