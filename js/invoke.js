@@ -21,7 +21,6 @@ function submitForm() {
     $('#btnSubmit').css('display', 'none');
     $('#bioForm').css('display', 'none');
     $('#btnpractice').css('display', 'block');
-	$("#status").css('display', 'block');
 }
 
 function practice() {
@@ -125,32 +124,32 @@ var combos = [
 	},
 	{
 	"name": "combo3",
-    "sequence": "dasfa",
+    "sequence": "dassa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo4",
-    "sequence": "sasda",
+    "sequence": "safda",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo5",
-    "sequence": "fsdff",
+    "sequence": "fasff",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo6",
-    "sequence": "dsafs",
+    "sequence": "dsaas",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo7",
-    "sequence": "fsdfa",
+    "sequence": "fsafa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
 	"name": "combo8",
-    "sequence": "fdafa",
+    "sequence": "fdasa",
 	"image": 'url("http://i.imgur.com/e2L27wh.png")',
 	},
 	{
@@ -170,9 +169,8 @@ function addToResponseData(timestamp, state, data) {
     responseData[timestamp] = {
         'state': state,
         'data': data,
-    } 
+    }
 }
-
 
 // Number of presses
 var presses = 0;
