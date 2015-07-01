@@ -198,12 +198,14 @@ function execute(keyCode){
             successState = 'matched';
 			flashStatus();
             if (comboList.length > 0) {
-                comboNumber = comboList.shift();
-                console.log("Your next combo is");
-                console.log(combos[comboNumber].sequence);
-				indicateNextCombo(combos[comboNumber].sequence.toUpperCase());
-                queue = _.map(queueKeys, function(key) {return new Circle('', '')});
-                updateCircles();
+                setTimeout(function() {
+                    comboNumber = comboList.shift();
+                    console.log("Your next combo is");
+                    console.log(combos[comboNumber].sequence);
+                    indicateNextCombo(combos[comboNumber].sequence.toUpperCase());
+                    queue = _.map(queueKeys, function(key) {return new Circle('', '')});
+                    updateCircles();
+                }, 1000)
             } else {
                 endGame(taskNum);
             }
@@ -257,9 +259,9 @@ function showHideMenuClick1(){
 }
 
 function flashStatus(){
-	$("#status").fadeOut(100, function() {
+	$("#status").fadeOut(0, function() {
 		$(this).css('color', '#00CC66');
-		$(this).text("Status: Correct").fadeIn(100);
+		$(this).text("Status: Correct").fadeIn(0);
 	});
 }
 
