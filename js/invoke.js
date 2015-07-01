@@ -210,6 +210,7 @@ function execute(keyCode){
                     inputFlag = 1;
                 }, 1000)
             } else {
+                inputFlag = 1;
                 endGame(taskNum);
             }
         }
