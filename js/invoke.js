@@ -237,6 +237,7 @@ function endGame(nextTask){
     $('#btn' + sectionIDs[taskNum]).css('display', 'block')
     if (taskNum == sectionIDs.length - 1) {
         $('#btndownload').html('<a href="data:' + encodeURI("text/json;charset=utf-8," + JSON.stringify(responseData)) + '" download="' + bio['email'].replace('@', '_').replace('.', '_') + '.json">Download Json</a>');
+        $('#doneInstructions').css('display', 'block');
     }
 }
 
