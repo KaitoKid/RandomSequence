@@ -2,6 +2,7 @@ var sectionIDs = ['practice', 'baseline', 'training', 'posttest', 'download'];
 var sections = [practice, baseline, training, posttest, downloadJson];
 var taskNum = 0;
 var bio;
+var inputFlag = 1;
 
 function submitMobaForm() {
     $('#btnSubmitMoba').css('display', 'none')
@@ -189,7 +190,7 @@ function execute(keyCode){
     var timestamp = (new Date).getTime().toString();
     var targetQueue = combos[comboNumber].sequence;
     var successState = 'unmatched';
-    if (keyCode in defaultFingerMapping) {
+    if (keyCode in defaultFingerMapping && inputFlag == 1) {
         addToQueue(colorMapping[defaultFingerMapping[keyCode]], defaultFingerMapping[keyCode])
         var currentQueue = _.map(queue, function(q) {return q.letter}).join('');
         console.log(targetQueue);
@@ -197,6 +198,7 @@ function execute(keyCode){
         if (targetQueue == currentQueue) {
             successState = 'matched';
 			flashStatus();
+            inputFlag = 0;
             if (comboList.length > 0) {
                 setTimeout(function() {
                     comboNumber = comboList.shift();
@@ -205,6 +207,7 @@ function execute(keyCode){
                     indicateNextCombo(combos[comboNumber].sequence.toUpperCase());
                     queue = _.map(queueKeys, function(key) {return new Circle('', '')});
                     updateCircles();
+                    inputFlag = 1;
                 }, 1000)
             } else {
                 endGame(taskNum);
