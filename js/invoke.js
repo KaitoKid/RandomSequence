@@ -83,8 +83,8 @@ function updateCircles() {
     })
 }
 
-var queueIds = ['circleOne', 'circleTwo', 'circleThree', 'circleFour', 'circleFive'];
-var queueKeys = ['a', 's', 'd', 'f', 'e'];
+var queueIds = ['circleOne', 'circleTwo', 'circleThree', 'circleFour'];
+var queueKeys = ['a', 's', 'd', 'f'];
 
 function initialize(mode, combosToDo) {
     //queue = _.map(queueKeys, function(key) {return new Circle('#FFFFFF', '')});
@@ -130,29 +130,52 @@ var queue;
 var combos = [
 	{
 	"name": "",
-    "sequence": "asdfa",
-	"image": 'url("http://i.imgur.com/JTlUPwY.png")',
+    "sequence": "fdas",
 	},
 	{
 	"name": "",
-    "sequence": "fdsaa",
-	"image": 'url("http://i.imgur.com/oQS5lTU.png")',
+    "sequence": "sdfa",
 	},
 	{
 	"name": "",
-    "sequence": "dassa",
-	"image": 'url("http://i.imgur.com/e2L27wh.png")',
+    "sequence": "fads",
 	},
 	{
 	"name": "",
-    "sequence": "safda",
-	"image": 'url("http://i.imgur.com/e2L27wh.png")',
+    "sequence": "fsad",
 	},
 	{
 	"name": "",
-    "sequence": "fasff",
-	"image": 'url("http://i.imgur.com/e2L27wh.png")',
+    "sequence": "fdsa",
 	},
+    {
+      "name": "",
+      "sequence": "dfsa",
+    },
+    {
+      "name": "",
+      "sequence": "sfda",
+    },
+    {
+      "name": "",
+      "sequence": "fasd",
+    },
+    {
+      "name": "",
+      "sequence": "dafs",
+    },
+    {
+      "name": "",
+      "sequence": "dfas",
+    },
+    {
+      "name": "",
+      "sequence": "dsfa",
+    },
+    {
+      "name": "",
+      "sequence": "fsda",
+    }
 ];
 
 // This is the list of 10 combo integers that we will use for the challenge
