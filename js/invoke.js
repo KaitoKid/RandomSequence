@@ -1,10 +1,24 @@
-var sectionIDs = ['practice', 'baseline', 'training', 'posttest', 'download'];
-var sections = [practice, baseline, training, posttest, downloadJson];
 var sectionIDs = ['practice', 'download'];
-var sections = [practice, downloadJson];
 var taskNum = 0;
 var bio;
 var inputFlag = 1;
+
+
+var sections = [
+    {'name': 'practice',
+     'combos': _.flatten(_.times(6, function() {return _.range(12)}));
+     //'combos': ['1','2'],
+    },
+    {'name': 'download',
+    }
+];
+
+
+function nextButton(section) {
+    $('#btnSections')[0].onclick = function() {initialize(section)};
+    $('#btnSections').css('display', 'block');
+    $('#btnSections').text(section.name);
+}
 
 function submitMobaForm() {
     $('#btnSubmitMoba').css('display', 'none')
@@ -37,7 +51,8 @@ function submitForm() {
     addToResponseData((new Date()).getTime().toString(), 'bio', data);
     $('#btnSubmit').css('display', 'none');
     $('#bioForm').css('display', 'none');
-    $('#btnpractice').css('display', 'block');
+    //$('#btnpractice').css('display', 'block');
+    nextButton(sections[taskNum]);
 }
 
 function practice() {
@@ -85,7 +100,10 @@ function updateCircles() {
 var queueIds = ['circleOne', 'circleTwo', 'circleThree', 'circleFour'];
 var queueKeys = ['a', 's', 'd', 'f'];
 
-function initialize(mode, combosToDo) {
+function initialize(section) {
+    var mode = section.name;
+    var combosToDo = section.combos;
+    $('#btnSections').css('display', 'none');
     //queue = _.map(queueKeys, function(key) {return new Circle('#FFFFFF', '')});
     taskNum++;
     queue = _.map(queueKeys, function(key) {return new Circle('https://upload.wikimedia.org/wikipedia/commons/d/d2/Solid_white.png', '')});
@@ -121,9 +139,8 @@ function configureFingers(name, key) {
 }
 
 //var defaultFingerMapping = {68: 5, 49: 9, 81: 1, 87: 2, 69: 3, 82: 4}
-var defaultFingerMapping = {65: 'a', 83: 's', 68: 'd', 70: 'f'}
 var colorMapping = {'a': 'url("http://i.imgur.com/sBVGPUd.png")', 's': 'url("http://i.imgur.com/Nv0EOah.png")', 'd': 'url("http://i.imgur.com/IbJmDwU.png")', 'f': 'url("http://i.imgur.com/34sLQJ5.png")'}
-// Your color history
+var defaultFingerMapping = {65: 'a', 83: 's', 68: 'd', 70: 'f'}
 var queue;
 // need function to assign new finger mappings
 
@@ -245,7 +262,7 @@ function endGame(nextTask){
     updateCircles();
     $('#nextComboName').text('');
     $('#nextCombo').text('');
-    if (taskNum == sectionIDs.length-1) {
+    if (sections[taskNum].name == 'download') {
         $('#btndownload').html('<a href="data:' + encodeURI("text/json;charset=utf-8," + JSON.stringify(responseData)) + '" download="' + bio['email'].replace('@', '_').replace('.', '_') + '.json">Download Json</a>');
         $('#btndownload').css('display', 'block');
         $('#doneInstructions').css('display', 'block');
@@ -254,9 +271,9 @@ function endGame(nextTask){
             seconds:1,  // number of seconds to count down
             onUpdateStatus: function(sec){$('#countDown').text(sec + ' seconds until next session.');}, // callback for each second
             onCounterEnd: function() {
-                $('#btn' + sectionIDs[taskNum]).css('display', 'block')
                 alert('Start next session!');
                 $('#countDown').text('');
+                nextButton(sections[taskNum]);
             } // final action
         });
         myCounter.start();
@@ -304,7 +321,7 @@ function indicateNextCombo(s){
 	});
 	
 	$("#nextComboName").fadeOut(0, function() {
-		$(this).text(combos[comboNumber].name.toUpperCase()).fadeIn(0);
+		//$(this).text(combos[comboNumber].name.toUpperCase()).fadeIn(0);
 	});	
 }
 
