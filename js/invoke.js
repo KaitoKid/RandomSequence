@@ -1,5 +1,7 @@
 var sectionIDs = ['practice', 'baseline', 'training', 'posttest', 'download'];
 var sections = [practice, baseline, training, posttest, downloadJson];
+var sectionIDs = ['practice', 'download'];
+var sections = [practice, downloadJson];
 var taskNum = 0;
 var bio;
 var inputFlag = 1;
@@ -40,31 +42,28 @@ function submitForm() {
 
 function practice() {
     $("#status").css('display', 'block');
-    var combosToDo = ['3', '4', '2', '1'];
+    //var combosToDo = ['3', '4', '2', '1'];
+    var combosToDo = _.flatten(_.times(6, function() {return _.range(12);}));
     $('#btnpractice').css('display', 'none');
     initialize('practice', combosToDo);
-    taskNum++;
 }
 
 function baseline() {
     var combosToDo = ['2', '4', '3', '1'];
     $('#btnbaseline').css('display', 'none');
     initialize('baseline', combosToDo);
-    taskNum++;
 }
 
 function training() {
     var combosToDo = ['4', '2', '3', '1'];
     $('#btntraining').css('display', 'none');
     initialize('training', combosToDo);
-    taskNum++;
 }
 
 function posttest() {
     var combosToDo = ['1', '2', '3', '4'];
     $('#btnposttest').css('display', 'none');
     initialize('posttest', combosToDo);
-    taskNum++;
 }
 
 function downloadJson() {
@@ -88,6 +87,7 @@ var queueKeys = ['a', 's', 'd', 'f'];
 
 function initialize(mode, combosToDo) {
     //queue = _.map(queueKeys, function(key) {return new Circle('#FFFFFF', '')});
+    taskNum++;
     queue = _.map(queueKeys, function(key) {return new Circle('https://upload.wikimedia.org/wikipedia/commons/d/d2/Solid_white.png', '')});
     updateCircles();
     $(document).unbind('keydown')
@@ -129,51 +129,39 @@ var queue;
 
 var combos = [
 	{
-	"name": "",
     "sequence": "fdas",
 	},
 	{
-	"name": "",
     "sequence": "sdfa",
 	},
 	{
-	"name": "",
     "sequence": "fads",
 	},
 	{
-	"name": "",
     "sequence": "fsad",
 	},
 	{
-	"name": "",
     "sequence": "fdsa",
 	},
     {
-      "name": "",
       "sequence": "dfsa",
     },
     {
-      "name": "",
       "sequence": "sfda",
     },
     {
-      "name": "",
       "sequence": "fasd",
     },
     {
-      "name": "",
       "sequence": "dafs",
     },
     {
-      "name": "",
       "sequence": "dfas",
     },
     {
-      "name": "",
       "sequence": "dsfa",
     },
     {
-      "name": "",
       "sequence": "fsda",
     }
 ];
@@ -257,11 +245,22 @@ function endGame(nextTask){
     updateCircles();
     $('#nextComboName').text('');
     $('#nextCombo').text('');
-    $('#btn' + sectionIDs[taskNum]).css('display', 'block')
-    if (taskNum == sectionIDs.length - 1) {
+    if (taskNum == sectionIDs.length-1) {
         $('#btndownload').html('<a href="data:' + encodeURI("text/json;charset=utf-8," + JSON.stringify(responseData)) + '" download="' + bio['email'].replace('@', '_').replace('.', '_') + '.json">Download Json</a>');
+        $('#btndownload').css('display', 'block');
         $('#doneInstructions').css('display', 'block');
-    }
+    } else {
+        var myCounter = new Countdown({  
+            seconds:1,  // number of seconds to count down
+            onUpdateStatus: function(sec){$('#countDown').text(sec + ' seconds until next session.');}, // callback for each second
+            onCounterEnd: function() {
+                $('#btn' + sectionIDs[taskNum]).css('display', 'block')
+                alert('Start next session!');
+                $('#countDown').text('');
+            } // final action
+        });
+        myCounter.start();
+    }   
 }
 
 function showHideMenuClick(){
@@ -307,4 +306,34 @@ function indicateNextCombo(s){
 	$("#nextComboName").fadeOut(0, function() {
 		$(this).text(combos[comboNumber].name.toUpperCase()).fadeIn(0);
 	});	
+}
+
+
+
+function Countdown(options) {
+  var timer,
+  instance = this,
+  seconds = options.seconds || 10,
+  updateStatus = options.onUpdateStatus || function () {},
+  counterEnd = options.onCounterEnd || function () {};
+
+  function decrementCounter() {
+    updateStatus(seconds);
+    if (seconds === 0) {
+      counterEnd();
+      instance.stop();
+    }
+    seconds--;
+  }
+
+  this.start = function () {
+    clearInterval(timer);
+    timer = 0;
+    seconds = options.seconds;
+    timer = setInterval(decrementCounter, 1000);
+  };
+
+  this.stop = function () {
+    clearInterval(timer);
+  };
 }

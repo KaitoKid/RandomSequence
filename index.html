@@ -77,112 +77,12 @@
                         <button id="btnbaseline" onclick="baseline();" style="display:none">Baseline</button>                        
                         <button id="btntraining" onclick="training();" style="display:none">Training</button>                 
                         <button id="btnposttest" onclick="posttest();"style="display:none">Posttest</button>
-                        <button id="btndownload" onclick="downloadJson();" style="display:none">Download Json</button>
-                        <p id='doneInstructions' style="display:none">Finished with the task!  Download and email the .json file to <a href="mailto:InvokerPracticeResearch@gmail.com">InvokerPracticeResearch@gmail.com</a> to be entered into Steam raffle!</p>
+                        <button id="btndownload" style="display:none">Download Json</button>
+                        <p id='countDown'></p>
+                        <p id='doneInstructions' style="display:none">Finished with the task!  Download and email the .json file to <a href="mailto:InvokerPracticeResearch@gmail.com">InvokerPracticeResearch@gmail.com</a></p>
                         <br /><br /><br /><br />
-                        <!--button id="btnStart" style="display:none; width: 75px;" onclick="startGame();">Start</button>     
-                        &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp                 
-                        <button id="btnReturn" style="display:none;" onclick="returnToMain();">Main Menu</button--->
-
                     </div>
                 </div>
-				
-				<!--
-                <div class="threecol-left" style="text-align:left;">
-				
-                     <h3 style ="margin-top:90px">Stats:</h3>
-                     <div style="margin-top:5px; margin-left:auto; margin-right:auto;">
-                        <label id="lblTimer" style="font-size:normal; font-weight:bold;">Time: -</label>
-                    </div> 
-                    
-                     <div style="margin-top:10px; margin-left:auto; margin-right:auto;">
-                        <label id="lblSpellsLeft" style="font-size:normal; font-weight:bold;">Spells Left: -</label>
-                    </div>                      
-                    
-                     <div style="margin-top:10px; margin-left:auto; margin-right:auto;">
-                        <label id="lblSpellsInvoked" style="font-size:normal; font-weight:bold;">Spells Invoked: -</label>
-                    </div> 
-
-                    <div style="margin-top:10px; margin-left:auto; margin-right:auto;">
-                        <label id="lblKeysPressed" style="font-size:normal; font-weight:bold;">Keys Pressed: -</label>
-                    </div> 
-
-					
-					<br /><br /><br />
-					
-	
-					
-					<button id="btnShowHide1" onclick="showHideMenuClick1();">Hide FAQ</button>
-					<div id="thisInfo" style="display">
-						<ul style="list-style:none; padding:0;">
-							<li><b>What's this for?</b></li>
-							<br/>
-							<li>It's a small research project to track people's learning curve</li>
-							<br/>
-							<li><b>What are you tracking?</b></li>
-							<li>Just the keys that correspond to the item, spells, invoke, and cast. <a href="http://google.com">Here's our source code</a>.</li>
-							<br/><br/>
-							<li><b>Will you release the data?</b></li>
-							<li>Yes, one week after the research.</li>
-							<br/><br/>
-							<li><b>Are you tracking anything else?</b></li>
-							<li>No. We are tracking only those 5 keys on this page. You can see it all in our source.</li>
-
-						</ul>
-					</div>
-					
-					
-                </div>
-				-->
-				
-				<!--
-                <div class="threecol-right">
-				
-                    <b>Instructions:</b>     <br/>                   
-                        - Controls:  <br/>
-                            &nbsp&nbsp&nbsp&nbsp <label id="lblItemKey"></label> - Eul's  <br/>
-                            &nbsp&nbsp&nbsp&nbsp <label id="lblQuasKey"></label> - Quas  <br/>
-                            &nbsp&nbsp&nbsp&nbsp <label id="lblWexKey"></label> - Wex <br/> 
-                            &nbsp&nbsp&nbsp&nbsp <label id="lblExortKey"></label> - Exort <br/>
-                            &nbsp&nbsp&nbsp&nbsp <label id="lblInvokeKey"></label> - Invoke <br/>
-                            &nbsp&nbsp&nbsp&nbsp <label id="lblCastKey"></label> - <label id="lblCast">Cast</label><br/><br />
-                            - Click button name to reassign key
-                             <br/> <br/>
-                        - Choose A Mode and Click Start <br/>
-                            &nbsp&nbsp&nbsp&nbsp- Practice - Test if your keys are right. <br/>
-                            &nbsp&nbsp&nbsp&nbsp- Baseline - Once you're comfortable, set a baseline to compare your future scores to <br />
-                            &nbsp&nbsp&nbsp&nbsp- Training - Run through an entire set of Invoker combinations <br />
-                            &nbsp&nbsp&nbsp&nbsp- Post-Test - See how much you've improved compared to your baseline <br />
-							<br />
-                        - For new Invokers <a href="http://www.dota2wiki.com/wiki/Invoker#Invoked_Skills">here</a> is a list of what the spells do.<br/><br />
-                        - As well as <a href="http://www.dota2wiki.com/wiki/Invoker#Abilities">what</a> quas, wex and exort do when not <br/>
-                        &nbsp invoked. <br/><br />
-
-                        - Special thanks to <a href="http://www.reddit.com/r/DotA2">r/DotA2</a> for the suggestions!
-                        <br /><br />
-						
-						- Original design by Ignignokt
-						<br /> <br />
-                         <!--button id="btnShowHide" onclick="showHideMenuClick();">Show Cheat Sheet</button>
-                         <div id="cheatsheet" style="display:none">
-                            <ul style="list-style:none; padding:0;">
-								<li><b>Don't forget to use Eul's, invoke, and cast the spell</b></li>
-								<br/>
-                                <li>Cold Snap - Quas Quas Quas</li>
-                                <li>Ghost Walk - Quas Quas Wex</li>
-                                <li>Ice Wall - Quas Quas Exort</li>
-                                <li>EMP - Wex Wex Wex</li>
-                                <li>Tornado - Wex Wex Quas</li>
-                                <li>Alacrity - Wex Wex Exort</li>
-                                <li>Sun Strike - Exort Exort Exort</li>
-                                <li>Forge Spirit - Exort Exort Quas</li>
-                                <li>Chaos Meteor - Exort Exort Wex</li>
-                                <li>Deafening Blast - Quas Wex Exort</li>
-                                
-                            </ul>
-                        </div>
-                </div>
-				-->
             </div>
         </div>
         <audio id="soundHandle" style="display: none;"></audio>
