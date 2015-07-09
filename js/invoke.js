@@ -6,7 +6,7 @@ var inputFlag = 1;
 
 var sections = [
     {'name': 'practice',
-     'combos': _.flatten(_.times(6, function() {return _.range(12)}));
+     'combos': _.flatten(_.times(6, function() {return _.range(12)}))
      //'combos': ['1','2'],
     },
     {'name': 'download',
