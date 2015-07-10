@@ -6,8 +6,14 @@ var inputFlag = 1;
 
 var sections = [
     {'name': 'practice',
-     'combos': _.flatten(_.times(6, function() {return _.range(12)}))
+     'combos': _.flatten(_.times(2, function() {return _.range(12)}))
      //'combos': ['1','2'],
+    },
+    {'name': 'practice 2',
+     'combos': _.flatten(_.times(2, function() {return [8, 7, 5, 1, 0, 9, 6, 4, 11, 3, 10, 2]})),
+    },
+    {'name': 'practice 2',
+     'combos': _.flatten(_.times(2, function() {return [3, 11, 1, 8, 7, 2, 9, 0, 5, 10, 4, 6]})),
     },
     {'name': 'download',
     }
@@ -268,7 +274,7 @@ function endGame(nextTask){
         $('#doneInstructions').css('display', 'block');
     } else {
         var myCounter = new Countdown({  
-            seconds:1,  // number of seconds to count down
+            seconds: 30,  // number of seconds to count down
             onUpdateStatus: function(sec){$('#countDown').text(sec + ' seconds until next session.');}, // callback for each second
             onCounterEnd: function() {
                 alert('Start next session!');
