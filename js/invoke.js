@@ -5,14 +5,14 @@ var inputFlag = 1;
 
 
 var sections = [
-    {'name': 'practice',
+    {'name': 'round 1',
      'combos': _.flatten(_.times(2, function() {return _.range(12)}))
      //'combos': ['1','2'],
     },
-    {'name': 'practice 2',
+    {'name': 'round 2',
      'combos': _.flatten(_.times(2, function() {return [8, 7, 5, 1, 0, 9, 6, 4, 11, 3, 10, 2]})),
     },
-    {'name': 'practice 2',
+    {'name': 'round 3',
      'combos': _.flatten(_.times(2, function() {return [3, 11, 1, 8, 7, 2, 9, 0, 5, 10, 4, 6]})),
     },
     {'name': 'download',
